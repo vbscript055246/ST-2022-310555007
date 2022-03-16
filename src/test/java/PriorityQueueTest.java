@@ -33,7 +33,7 @@ public class PriorityQueueTest {
         int index = 0;
         int[] result = new int [input_arr.length];
         for (int i : input_arr) que.add(i);
-        for (int i=0;i<input_arr.length;i++) result[i] = que.poll();
+        for (int i=0;i<input_arr.length;i++) result[i] = que.poll()+1;
         assertArrayEquals(answer_arr, result);
     }
 
@@ -41,7 +41,7 @@ public class PriorityQueueTest {
     public void whenExceptionThrown_addNull(){
         Exception e = assertThrows(NullPointerException.class, ()->{
             PriorityQueue<Integer> que = new PriorityQueue<Integer>();
-//            que.add(null);
+            que.add(null);
         });
 
         System.out.println(e);
