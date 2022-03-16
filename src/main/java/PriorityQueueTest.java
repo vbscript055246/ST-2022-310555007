@@ -38,28 +38,33 @@ public class PriorityQueueTest {
     }
 
     @Test
-    public void testException(){
+    public void whenExceptionThrown_addNull(){
         Exception e = assertThrows(NullPointerException.class, ()->{
             PriorityQueue<Integer> que = new PriorityQueue<Integer>();
             que.add(null);
         });
 
-        Exception e1 = assertThrows(ClassCastException.class, ()->{
+        System.out.println(e);
+    }
+
+    @Test
+    public void whenExceptionThrown_classCast(){
+        Exception e = assertThrows(ClassCastException.class, ()->{
             PriorityQueue<PriorityQueue> que = new PriorityQueue<PriorityQueue>();
             que.add(que);
         });
 
-        Exception e2 = assertThrows(NoSuchElementException.class, ()->{
+        System.out.println(e);
+    }
+
+    @Test
+    public void whenExceptionThrown_noSuchElement(){
+        Exception e = assertThrows(NoSuchElementException.class, ()->{
             PriorityQueue<Integer> que = new PriorityQueue<Integer>();
             que.remove();
         });
 
         System.out.println(e);
-        System.out.println(e1);
-        System.out.println(e2);
-//        String expectedMsg = "java.";
-//        String actualMsg = e.getMessage();
-//        assertEquals(actualMsg, expectedMsg);
     }
 
 }
