@@ -41,7 +41,7 @@ public class PriorityQueueTest {
     public void whenExceptionThrown_addNull(){
         Exception e = assertThrows(NullPointerException.class, ()->{
             PriorityQueue<Integer> que = new PriorityQueue<Integer>();
-//            que.add(null);
+            que.add(null);
         });
 
         System.out.println(e);
