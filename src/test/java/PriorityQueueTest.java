@@ -33,7 +33,7 @@ public class PriorityQueueTest {
         int index = 0;
         int[] result = new int [input_arr.length];
         for (int i : input_arr) que.add(i);
-        for (int i=0;i<input_arr.length;i++) result[i] = que.poll()+1;
+        for (int i=0;i<input_arr.length;i++) result[i] = que.poll();
         assertArrayEquals(answer_arr, result);
     }
 
